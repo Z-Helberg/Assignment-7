@@ -1,63 +1,73 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+   <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
         <title>Zané du Plessis Portfolio</title>
     </head>
+
     <body>
         <header id="portfolio">
+            <nav>
+                <ul class="header-link-display">
+                <li><a class="link" href="#portfolio">Portfolio</a></li>
+                <li><a class="link" href="#career">Career</a></li>
+                <li><a class="link" href="#hobbies">Hobbies</a></li>
+                </ul>
+            </nav>
+        <div>
+            <hr>
             <h2>Welcome to my Portfolio</h2>
             <hr>
+        </div>
         </header>
-        <img src="profile.jpeg" alt="My profile image" width="275" height="400" aria-label="Profile picture" >
+
+        <img class="center" src="profile.jpeg" alt="My profile image" width="300" aria-label="Profile picture" >
+            <p id="font-name1">My Name is Zané du Plessis, I actually recently got Married. So let's try again.</p>
+            <p id="font-name2">Hi! My Name is Zané Helberg!</p>
         
-        
-        <section>
-            <h2>About Me</h2>
+        <section class="section1">
+            <h2  class="align-to-paragraph">About Me</h2>
             <p>I’m a passionate and creative individual best known for my signature pink hair and bold, expressive style. With a strong background in the beauty industry, I’ve always been drawn to the art of transformation—whether through hair or digital design. Recently, I’ve expanded my skills into the world of front-end development, driven by a desire to grow, learn, and challenge myself in new ways. My journey into coding reflects the same energy I bring to everything I do: vibrant, curious, and constantly evolving. I thrive on blending aesthetics with functionality, and I’m excited to keep building beautiful, user-friendly digital experiences that reflect both my creativity and technical ambition.</p>
         </section>
-        
-        <nav>
-            <h2> To explore more about me</h2>
-            <ul>
-              <li><a href="#career">Career</a></li>
-              <li><a href="#hobbies">Hobbies</a></li>
-            </ul>
-        </nav>
 
-        <section id="career">
+        <section id="career" class="new-header-margin">
             <header>
-                <h2>Welcome to My Career</h2><hr>
+            <div>
+                <hr>
+                <h2>Welcome to My Career</h2>
+                <hr>
+            </div> 
             </header>
-            <article>
+
             <p>My journey in the hairdressing industry began in 2014, when I started studying and working at the prestigious corporate salon, Gary Rom. Through dedication, hard work, and a passion for the craft, I quickly rose through the ranks—achieving the highest stylist level within four years and being promoted to Salon Manager in my fifth year. During this time, I discovered and honed my specialized skills in extensions and colour, which have since become my signature services.</p>
             <p>Building on this foundation, I took a bold step and opened my own salon, where I continue to express my creativity and deliver exceptional results to my clients. Alongside managing my salon, I’ve also had the privilege of working as a freelance representative for Schwarzkopf—a brand that played a significant role in shaping me into the stylist I am today. Through this partnership, I not only work with their professional products but also help educate and inspire other stylists across South Africa.</p>
-            </article>
-           
-        
-            <video controls aria-label="Video showing a hairdressing transformation"> 
-                <source src="career_video.m4v" type="video/mp4">
+  
+            <h3 class="center-text">This transformation video captures a behind-the-scenes look at one of my favorite client journeys</h3>
+         
+            <div class="grey-background">
+            <video controls class="video center" aria-label="Video showing a hairdressing transformation"> 
+                <source src="career-video.m4v" type="video/mp4">
                 Browser cannot display this video
             </video>
+            </div>
             <br>
 
-            <p> This transformation video captures a behind-the-scenes look at one of my favorite client journeys—from the moment she stepped into the salon to the final reveal. Our goal was to enhance the manageability of her natural curls while introducing fresh dimension through advanced colour techniques, including a soft, seamless balayage. As a proud representative of South Africa competing in “Miss Teen Model” in the USA, she needed a look that was both glamorous and authentic. We completed her transformation with custom-placed extensions to add length and volume, giving her that extra edge on the international stage. Every step was crafted with precision, passion, and purpose to help her shine—on and off the runway.</p>
-            <h2>Back to</h2>
-            <nav>
-                <ul>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#hobbies">Hobbies</a></li>
-                </ul> 
-            </nav>
+            <p> We did a reverse balayage — which, for those unfamiliar, is a hair coloring technique where color is hand-painted onto the hair to create a soft, natural-looking gradient, usually going lighter toward the ends. In this case, we flipped the script: she had become too blonde and wanted to walk out of the salon as a seamless brunette. By adding depth and dimension back into her hair with deeper tones, we achieved a natural, blended result that still had movement and richness. I also shared some styling tips with her, including how to use Velcro rollers during her blow-dry routine to create maximum volume, and how to add some soft curls to enhance the final look.</p>
         </section>
 
         <section id="hobbies"> 
             <header>
-                <h2>Welcome to My Hobbies</h2><hr>
+            <div>
+                <hr>
+                <h2>Welcome to My Hobbies</h2>
+                <hr>
+            </div>
             </header>
+
             <p>In my free time, I love staying active and creative through a variety of hobbies that keep me inspired and balanced. Whether it's spending the day on the golf course, enjoying the thrill of go-kart racing, or diving into DIY projects around the house, I thrive on hands-on experiences that challenge me and spark joy. These activities allow me to unwind, explore new skills, and fuel my passion for both adventure and creativity.</p>
-            <h3>My hobbies are a combination of the following</h3>
+            <h2>My hobbies are a combination of the following</h2>
             <ul>
                 <li>DIY projects</li>
                 <li>Go-karting</li>
@@ -65,24 +75,34 @@
                 <li>Photography</li>
                 <li>Roadtrips</li>
             </ul>
-            
-            <img src="bots_1.jpeg" alt="Kookabura Bird" width="200" height="400" loading="lazy" aria-label="Kookabura bird">
-            <img src="bots_2.jpeg" alt="giraffe" width="500" height="300" aria-label="Giraffes on a plane">
-            <img src="bots_3.jpeg" alt="baobab tree" width="400" height="200" loading="lazy" aria-label="Baobab tree in sunset">    
-            <img src="bots_4.jpeg" alt="salt pans" width="600" height="300" aria-label="Car on salt pans">
+            <img src="bots_3.jpeg" alt="baobab tree"  height="400" loading="lazy" aria-label="Baobab tree in sunset">    
+            <img src="bots_2.jpeg" alt="giraffe" height="400" aria-label="Giraffes on a plane">
+            <img src="bots_10.jpeg" alt="late sunset"  height="400" aria-label="sunset late">
+            <img src="bots_5.jpeg" alt="land rover"  height="400" aria-label="land rover pans">
+            <img src="bots_6.jpeg" alt="elephant"  height="400" aria-label="elephant on road">
+            <img src="bots_8.jpeg" alt="early sunset"  height="400" aria-label="early sunset">
+            <img src="bots_7.jpeg" alt="buffulo"  height="400" aria-label="buffulo on water">
+            <img src="bots_4.jpeg" alt="salt pans" width="770" height="400" aria-label="Car on salt pans">            
+            <img src="bots_1.jpeg" alt="Kookabura Bird"  height="400" loading="lazy" aria-label="Kookabura bird">
             <br>
-
-            <h2>Back to</h2>
-            <nav>
-                <ul>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#career">Career</a></li>
-                </ul> 
-            </nav>
+           
+        <hr>
+        <nav>
+            <ul class="link-display">
+                <li><a class="link" href="#portfolio">Portfolio</a></li>
+                <li><h3 class="center-text">&larr;  Back to &rarr;</h3></li>
+                <li><a class="link" href="#career">Career</a></li>
+            </ul> 
+         </nav>
+        <hr>
         </section>
 
-<footer>Thank you for visiting my portfolio</footer>
-</body>
+<section class="footer-background">
+    <footer> 
+        <h4 class="boldless-text"> Thank you for visiting my portfolio. © 2025 Zané Helberg. All rights reserved.</h4>
+    </footer>
+    </section>
 
+</body>
 
 </html>
