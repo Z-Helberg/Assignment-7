@@ -1,21 +1,19 @@
-/* header*/
-/*Portfolio- photo - about me - paragraph*/
-/*career - head - paragraph - video - paragraph*/
-/*hobbies - head paragraph - photo's*/
-/*links - remove lines*/
 
 body {
     margin: 2rem;
     margin-top: 0;
     margin-bottom: 0;
-     background-color: hsla(309, 21%, 37%, 0.209);
+     background-color: #ded3dc;
+     
 }
 
 
 header > div {
-    border: 2px solid black;
+    border: 1px solid black;
+    border-radius: 65%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- }
+    background: radial-gradient(#ded3dc,white);
+  }
 
  @font-face {
     font-family: prata;
@@ -37,12 +35,14 @@ header {
     font-family: prata;
   }
 
+  @media (min-width: 768px) {
+    
   .grey-background{
-   background-color: rgb(46, 41, 41);
-   margin-left: 10rem;
-   margin-right: 10rem;
-
+    box-sizing: border-box;
+    background-color: rgb(46, 41, 41);
+    align-content: center;
   }
+}
 
 .new-header-margin{
   margin-top: 2rem;
@@ -84,44 +84,43 @@ header {
     text-decoration: underline;
   }
 
-  .link{
-    color: black;
-    font-size: 20px;
-    text-decoration: none;
-    display: inline-block;
-
-  }
 
   .header-link-display{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-left: 2rem;
-      margin-right: 3rem;
-      list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    color: black;
+    font-size: 20px;
+    padding: 1.5rem;
   }
   
-  .link-display{
-    display: flex;
+  .link-transform{
+    text-decoration: none;
+    color: black; 
+    /*display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 5rem;
-    margin-right: 5rem;
-    list-style-type: none;
+    margin-right: 5rem;*/
+    
   }
 
-  .video{
-    width: 40%;
-    height: auto;
+  @media (min-width: 768px) {
+    .video{
+      display: block;
+      width: 40%;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
   }
 
-  .center{
-    display: block;
-    margin: auto;
-  }
-
-  .boldless-text{
+  .footer-text{
     font-weight: normal;
+    text-align: center;
   }
 
   .footer-background{
@@ -135,3 +134,133 @@ header {
   hr {
     color: black;
   }
+
+  /* animation hovering */
+  a:hover{
+    font-weight: bolder;
+  }
+
+  .link-transform{
+    text-decoration: none;
+    color: black;
+  }
+
+  .index-link-transform{
+    text-decoration: underline;
+    color: darkgrey;
+  }
+
+  .career-grid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2 , 1fr);
+  }
+  
+  .career-card {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    
+  }
+  
+  .career-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Desktop layout */
+  @media (min-width: 768px) {
+    .career-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  
+  .link-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+
+  .homepage-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  
+  .homepage-card {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .homepage-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Desktop layout */
+  @media (min-width: 768px) {
+    .career-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+
+/*photo collage*/ 
+@media (min-width: 768px) {
+  .grid-look {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    margin-top: 2rem;
+  }
+} 
+
+
+.hobbie-grid {
+  display: flex;
+  gap: 0.5rem;
+  grid-template-columns: repeat(4 , 1fr);
+  overflow-x: scroll;
+}
+
+.hobbie-card {
+  background: #f8f8f8;
+  padding: 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  width: fit-content;
+  margin-bottom: 2 rem;
+  
+}
+
+.hobbie-card:hover {
+  transform: translateY(-10px);
+}
+
+ /* Desktop layout */
+ @media (min-width: 768px) {
+  .hobbie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: larger;
+  }
+}
+
+
+.image-flex-look{
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-direction: row;
+  width: auto;
+  height: 450px;
+  margin-top: 3rem;
+}
+  
+  
