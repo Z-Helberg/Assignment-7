@@ -3,16 +3,18 @@ body {
     margin: 2rem;
     margin-top: 0;
     margin-bottom: 0;
-     background-color: #ded3dc;
+    background-color: #ded3dc;
      
 }
 
 
 header > div {
     border: 1px solid black;
-    border-radius: 65%;
+    box-sizing: border-box;
+    border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: radial-gradient(#ded3dc,white);
+    display: block;
   }
 
  @font-face {
@@ -93,7 +95,7 @@ header {
     margin-right: 4rem;
     color: black;
     font-size: 20px;
-    padding: 1.5rem;
+    padding: 0.75rem;
   }
   
   .link-transform{
@@ -236,7 +238,7 @@ header {
   transition: transform 0.3s ease;
   text-align: center;
   width: fit-content;
-  margin-bottom: 2 rem;
+  margin-bottom: 2rem;
   
 }
 
@@ -263,4 +265,70 @@ header {
   margin-top: 3rem;
 }
   
+  /*BUTTON STYLING*/
+ /* made it an ID to keep code cleaner and easier to read*/
+ .fun-facts-style{
+  text-align: center;
+ } 
+
+ #fun-facts {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(241, 70, 127);
+    color: rgb(4, 4, 4);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
   
+  }
+  #messageBox {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: #333;
+    padding: 20px 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    z-index: 1000;
+    color: #f8f8f8;
+  }
+
+  #close-button {
+    margin-top: 30px;
+    padding: 8px 16px;
+    background-color: rgb(241, 70, 127);
+    color: rgb(5, 4, 4);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #consultation {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(241, 70, 127);
+    color: rgb(4, 4, 4);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .my-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(241, 70, 127);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  /* beagle image style*/
+
+  #beagle{
+    position: absolute;
+    opacity: 0.5;
+
+  }
