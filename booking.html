@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html lang="en">
+   <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Zané Career</title>
+    </head>
+
+<body class="bodyBackground">
+    <div class="containerBox">
+        <div class="inline"> 
+            <div class="title">Booking Registration</div>
+            <a id="exitButton" class="link-transform"  href="career.html">✖️</a>
+        </div>
+                <!--remember to change action when done testing -->
+                <form action="#" id="registrationForm">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Full Name</span>
+                            <span id="fullnameError"></span>
+                            <input id="fullname" type="text" placeholder=" Enter Your Name">
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">Email Address</span>
+                            <span id="emailError"></span>
+                            <input  id="email" type="email" placeholder="Enter Your Email">
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">Number</span>
+                            <span id="numberError"></span>
+                            <input id="number" type="tel" placeholder="Enter Your Number ">
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">Password</span>
+                            <span id="passwordError"></span>
+                            <input id="password" type="password" placeholder="Enter your Password">
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">Confirm Password</span>
+                            <span id="confirmError"></span>
+                            <input id="confirmpassword" type="password" placeholder="Confirm your Password">
+                        </div>
+                    </div>
+               <button id="subBtn" class="submit" type="submit">Submit</button>
+                   <!--    <a class="submit" href="submit.html">Submit</a>  -->
+
+                </form>
+
+                
+
+    <script src="booking.js"></script> 
+</div>
+</body>
+</html>

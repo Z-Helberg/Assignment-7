@@ -87,6 +87,10 @@ header {
   }
 
 
+
+  /*NAVIGATION BAR STYLING*/
+
+  
   .header-link-display{
     display: flex;
     justify-content: space-between;
@@ -109,16 +113,34 @@ header {
     
   }
 
+
+  /*career videos*/
+    .video {
+    width: 100%;
+    max-width: 300px; /* or any reasonable limit */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
   @media (min-width: 768px) {
     .video{
-      display: block;
-      width: 40%;
-      align-items: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    width: 70%;
 
   }
+}
+
+.videobackground{
+  align-items: center;
+  padding: 20px 30px;
+  padding-top: 10px;
+  background: linear-gradient(45deg, rgba(241, 213, 50, 0.771),rgb(213, 180, 243));
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
   .footer-text{
     font-weight: normal;
@@ -152,10 +174,13 @@ header {
     color: darkgrey;
   }
 
+
+  /*CAREER CARDS DISPLAY*/
   .career-grid {
     display: grid;
     gap: 0.5rem;
-    grid-template-columns: repeat(2 , 1fr);
+    grid-template-columns: repeat(1 , 1fr);
+    min-width: calc(100%/ 2 - 20px);
   }
   
   .career-card {
@@ -164,6 +189,7 @@ header {
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    margin-top: 10px;
     
   }
   
@@ -187,6 +213,8 @@ header {
   }
 
 
+
+ /*HOMEPAGE GRID CARDS*/ 
   .homepage-grid {
     display: grid;
     gap: 2rem;
@@ -209,11 +237,14 @@ header {
   @media (min-width: 768px) {
     .career-grid {
       grid-template-columns: repeat(2, 1fr);
+      flex:wrap;
+      display: flex;
+      
     }
   }
   
 
-/*photo collage*/ 
+/*HOBBIE photo collage*/ 
 @media (min-width: 768px) {
   .grid-look {
     grid-template-columns: repeat(2, 1fr);
@@ -265,7 +296,11 @@ header {
   margin-top: 3rem;
 }
   
-  /*BUTTON STYLING*/
+
+
+
+
+  /*BUTTON STYLING RANDOM FACTS*/
  /* made it an ID to keep code cleaner and easier to read*/
  .fun-facts-style{
   text-align: center;
@@ -305,11 +340,29 @@ header {
     cursor: pointer;
   }
 
+
+
+
+  /*Consultation Button*/
+  .consultationbackground{
+  align-items: center;
+  padding: 20px 30px;
+  padding-top: 10px;
+  background: linear-gradient(45deg, rgba(241, 213, 50, 0.771),rgb(213, 180, 243));
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+  .ConBtn:hover{
+    font-weight: bold;
+  }
+
+
   #consultation {
     padding: 10px 20px;
     font-size: 16px;
     background-color: rgb(241, 70, 127);
-    color: rgb(4, 4, 4);
+    color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -325,6 +378,10 @@ header {
     cursor: pointer;
   }
 
+
+
+
+
   /* beagle image style*/
 
   #beagle{
@@ -332,3 +389,190 @@ header {
     opacity: 0.5;
 
   }
+
+
+
+
+
+  /*booking button*/
+.bookingborder{
+  align-items: center;
+  padding-bottom: 40px;
+  padding-top: 15px;
+  background: linear-gradient(45deg, rgba(241, 213, 50, 0.771),rgb(213, 180, 243));
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+  #bookingButton{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(241, 70, 127);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+
+
+
+/*form styling*/
+
+.bodyBackground{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgba(241, 213, 50, 0.771),rgb(213, 180, 243));
+}
+
+#exitButton{
+    padding: 5px;
+    background-color:rgba(248, 231, 133, 0.771) ;
+    border-style: solid;
+    border-width: 2px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-color: rgb(213, 180, 243); /*mouseover - hover pink*/
+    cursor: pointer;
+   
+}
+
+/* #exitButton, .title */
+.inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#exitButton {
+  position: end;
+  
+}
+
+.containerBox{
+    background-color: white;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+  
+ 
+}
+
+.containerBox .title {
+    font-size: 2rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    
+}
+
+.containerBox .title::before {
+    height: 3px;
+    width: 18rem;
+    background: linear-gradient(45deg, rgba(241, 213, 50, 0.771),rgb(213, 180, 243));
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    
+}
+
+.containerBox form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    margin: 20px 0 20px 0; /*Top an Bottom*/
+}
+
+form .user-details .input-box{
+    /*input box-*/
+    min-width: calc(100%/ 2 - 20px);
+    margin-bottom: 5px;
+    
+}
+
+    @media (max-width: 768px) {
+  form .user-details .input-box {
+    min-width: 100%; /* Full width on mobile */
+    margin-bottom: 15px;
+  }
+}
+
+.user-details .input-box .details{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 20px;
+    margin-left: 2px;
+}
+
+.input-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-details .input-box input{
+    height: 45px;
+    border-radius: 10px;
+    border-style: dotted; /* JS while typing make solid border when finished with valid input, error input make red solid*/
+    border-bottom-color: rgba(255, 217, 0, 0.771) ;
+    border-left-color: rgba(255, 217, 0, 0.771);
+    border-top-color: rgb(213, 180, 243);
+    border-right-color: rgb(213, 180, 243);
+    border-width: 2px;
+    padding-left: 15px;
+    font-size: 15px;
+    
+}
+
+
+.submit{
+    padding: 10px 30px;
+    background-color:rgba(248, 231, 133, 0.771) ;
+    border-style: solid;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-color: rgb(213, 180, 243); /*mouseover - hover pink*/
+    font-weight: bold;
+    cursor: progress;
+    text-decoration: none;
+}
+
+#fullnameError,
+#emailError,
+#numberError,
+#emailError,
+#passwordError,
+#confirmError {
+    color: darkgray;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    font-size: 13px;
+}
+
+
+/*SUBMIT>HTML*/
+
+.submitbackground{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgba(241, 213, 50, 0.771),rgb(213, 180, 243));
+}
+
+
+.submitMessage{
+    display: block;
+    border-radius: 10px;
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+}

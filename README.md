@@ -1,95 +1,72 @@
-# Zané Helberg Personal Portfolio Website
+## Zané Hair Studio – Consultation Booking Form
+
+This project is part of my front-end development course. It simulates a user consultation booking experience on the career page of a stylist (Zané). The user can submit their details for a free consultation, and receive confirmation upon submission.
+
+## PLEASE NOTE FILE NAMING CHANGE
 
 
-This project introduces a fun and interactive way for visitors to **learn more about the creator** through a single button click. Rather than displaying long paragraphs or static bios, the page offers **bite-sized facts** using a randomized popup box triggered by user interaction.
-Some fun hint at the bottom on the page to send you on a search for a beagle somewhere. 
+-**career.html** was renamed to **booking.html** to improve clarity and make navigation simpler.
+-**script.js** was renamed to **booking.js** to ensure the script file corresponds directly with the form page (booking.html), making it easier to manage and understand.
 
 
-## Fun Fact Button::
-## What user action triggers it?
+## Task 1: What the Form Does and How It Works
 
-- The **popup is triggered when the user clicks the "Give Me A Fun Fact 🐾" button**.
-- Once clicked, a random fun fact appears in a custom message box.
-- The user can then close the message box using the "Close" button.
-
-## Why was this interaction chosen?
-
-"One click with multiple data points instead of paragraphs or multiple buttons."
-
-- It's a more interactive and user-friendly experience
-- Reduces clutter by avoiding long bios or multiple info cards.
-- Encourages users to*explore the page longer through curiosity.
-
-
-
-## What does the interaction do?
-
-- Shows a random fun fact from a list of personal and professional highlights.
-- Keeps the content fresh and engaging with each click.
-- Enhances user engagement and gives insight into the personality behind the brand.
+- On the **career.html** page, users are invited to book a **free consultation** with a simple call-to-action button.
+- Clicking the button opens a **registration form** where the user fills in:
+  - Full name
+  - Email address
+  - Phone number
+  - Password and confirmation
+- When the form is submitted:
+  - **JavaScript validation** checks the inputs (detailed below).
+  - If all data is valid, the user is redirected to `submit.html`, which displays a thank-you message.
 
 
 
 
+## Form Validation (JavaScript)
 
+Form validation is handled in `booking.js`, and runs on form submission:
 
-## "Find the Beagle" Button
-### 🖱️ What user action triggers it?
+ **Full Name** -  Must include a space (to ensure both name and surname are entered)                         
+ **Email** -  Must include an `@` character                                                              
+ **Phone Number**  - Must be 10 digits and start with `0` (e.g., South African mobile format)                   
+ **Password**   - Must include at least **1 number** and **1 special character**                             
+**Confirm Password** - Must exactly match the password entered                                                 
 
-- The user must lick the button labeled `"mybutton"` to receive a fun challenge:
-  
-   “Somewhere on the page you will find a beagle. It is constantly moving. Once you find it, just click on it!”
-
-
-### Why was this interaction chosen?
-
-Instead of showing surprises immediately when the page loads, this button invites the user to feel like part of an interactive game.
-
-- Encourages engagement rather than passive alerts.
-- Helps reduce popup fatigue, especially on first visits.
-
-
-### What does the interaction do?
-
-- reveals a clue that there’s a moving beagle somewhere on the page.
+If any validation fails, relevant error messages are displayed next to each input field, and submission is prevented.
 
 
 
 
+## JavaScript Debugging & Validator Used
+
+- I used **Safari on macOS** for development and testing.
+- Errors and script issues were checked using **Inspect Element -> Console** in Safari's Developer Tools.
+- No errors were found in the console during submission.
 
 
-## Popup- Moving Beagle Message
+## Modal Interaction's 
+
+Although the form appears on its own page, it functions like a modal interaction:
+
+- The form is displayed prominently on screen with a **close button**, which brings the user back to the main career page.
+- JavaScript is used to validate the form and redirect the user based on input success.
 
 
-A Popup messages is loaded when you click on the Hobbies page. A beagle image moves randomly across the page, and the user is challenged to find and click it. When clicked, a congratulatory message is shown.
 
-### What triggers this interaction?
+## Challenges Faced
 
-- The animation and popup are triggered automatically
-  - `setTimeout` delays the first message by **2 seconds** after the page loads.
-  - The beagle starts moving right after the message appears.
+- I attempted to add a **burger menu** to the navigation bar but got stuck during implementation. I plan to return to this at a later stage in the project. 
+- Another challenge was writing functions in JavaScript. I often understand **what needs to happen**, but I’m still learning **how to write it clearly and correctly**.
 
 
-### Why was this interaction chosen?
 
-- It adds **a surprise element** without requiring any clicks.
-- It encourages users to explore the page and adds an unexpected interaction.
-- Users spend more time scanning the site, which increases engagement.
-- I made it a quick moving beagle for the fun, it can be a bit slower to make it easier to catch.. but where's the fun in that?
+##  Personal Reflections
 
-
-### What does the interaction do?
-
-- After 2 seconds (after lots of struggle), a popup alert tells the user:
-  
-  “Somewhere on the page there is a beagle. He is moving. Let's see if you can catch him.”
-
-- The **beagle image** then begins to move randomly around the screen every second (`setTimeout` recursively calls `moveBeagle()`).
-- When clicked on the beagl, popup alert- message for user to see:
-  
-“CONGRATULATIONS!!!! You've found the beagle”
-
-
-## Challenges in JavaScript
-
-- I feel like JavaScript isn’t as straightforward as HTML or CSS. I understand that it serves a completely different purpose — it adds interaction and logic rather than just structure or style. I’ll definitely need to put in more practice and self-study to really grasp its full potential. It was fun playing around with it, even if I’m not fully confident yet. I’m excited to keep learning and improving!
+- This was a valuable learning experience. It helped me practice:
+  - DOM manipulation
+  - Event listeners
+  - Form validation
+- I'm gaining confidence, especially with HTML and CSS.
+- **JavaScript is still challenging**, especially understanding how functions work under the hood — but I will continue to practice!
