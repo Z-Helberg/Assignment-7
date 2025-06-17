@@ -1,8 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
         <title>Zané Career</title>
     </head>
 
@@ -12,47 +13,254 @@
             <div class="title">Booking Registration</div>
             <a id="exitButton" class="link-transform"  href="career.html">✖️</a>
         </div>
-                <!--remember to change action when done testing -->
-                <form action="#" id="registrationForm">
-                    <div class="user-details">
-                        <div class="input-box">
-                            <span class="details">Full Name</span>
-                            <span id="fullnameError"></span>
-                            <input id="fullname" type="text" placeholder=" Enter Your Name">
-                        </div>
+        <div id="app">
+            <form action="#" id="registrationForm">
+                <div class="user-details">
+                    <input-component
+                        label="Full Name"
+                        id="fullname"
+                        type="text"
+                        placeholder="Enter Your Name"
+                        error-id="fullnameError"
+                        :error="errors.fullname"
+                        v-model="form.fullname"
+                        @input="validateField('fullname')"
+                    ></input-component>
+                    <input-component
+                        label="Email Address"
+                        id="email"
+                        type="email"
+                        placeholder="Enter Your Email"
+                        error-id="emailError"
+                        :error="errors.email"
+                        v-model="form.email"
+                        @input="validateField('email')"
+                    ></input-component>
+                    <input-component
+                        label="Number"
+                        id="number"
+                        type="tel"
+                        placeholder="Enter Your Number "
+                        error-id="numberError"
+                        :error="errors.number"
+                        v-model="form.number"
+                        @input="validateField('number')"
+                    ></input-component>
+                    <input-component
+                        label="Password"
+                        id="password"
+                        type="password"
+                        placeholder="Enter your Password"
+                        error-id="passwordError"
+                        :error="errors.password"
+                        v-model="form.password"
+                        @input="validateField('password')"
+                    ></input-component>
+                    <input-component
+                        label="Confirm Password"
+                        id="confirmpassword"
+                        type="password"
+                        placeholder="Confirm your Password"
+                        error-id="confirmError"
+                        :error="errors.confirmpassword"
+                        v-model="form.confirmpassword"
+                        @input="validateField('confirmpassword')"
+                    ></input-component>
+                </div>
+                <button @click.prevent="showAlert()" id="subBtn" class="submit">Submit</button>
+            </form>
+            <modal-component v-if="showModal" @close="showModal = false" />
+        </div>
+        <template id="input-component">
+            <div class="input-box">
+                <span class="details">{{ label }}</span>
+                <span :id="errorId">{{ error }}</span>
+                <input
+                    :id="id"
+                    :type="type"
+                    :placeholder="placeholder"
+                    :value="modelValue"
+                    @input="$emit('update:modelValue', $event.target.value); $emit('input')"
+                >
+            </div>
+        </template>
+        <template id="modal-component">
+            <div class="modal-overlay">
+                <div class="modal-content">
+                    <h2>Registration Successful!</h2>
+                    <p>Thank you for booking your consultation. We've received your details and will be in touch shortly.</p>
+                    <button @click="$emit('close')" class="close-modal">Close</button>
+                </div>
+            </div>
+        </template>
+        <script>
+        const { createApp } = Vue;
 
-                        <div class="input-box">
-                            <span class="details">Email Address</span>
-                            <span id="emailError"></span>
-                            <input  id="email" type="email" placeholder="Enter Your Email">
-                        </div>
+        const app = createApp({
+            data() {
+                return {
+                    form: {
+                        fullname: '',
+                        email: '',
+                        number: '',
+                        password: '',
+                        confirmpassword: ''
+                    },
+                    errors: {
+                        fullname: '',
+                        email: '',
+                        number: '',
+                        password: '',
+                        confirmpassword: ''
+                    },
+                    showModal: false
+                }
+            },
+            methods: {
+                validateField(field) {
+                    switch(field) {
+                        case 'fullname':
+                            this.errors.fullname = this.form.fullname.trim() ? '' : 'Full name is required.';
+                            break;
+                        case 'email':
+                            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!this.form.email.trim()) {
+                                this.errors.email = 'Email is required.';
+                            } else if (!emailPattern.test(this.form.email)) {
+                                this.errors.email = 'Invalid email address.';
+                            } else {
+                                this.errors.email = '';
+                            }
+                            break;
+                        case 'number':
+                            this.errors.number = this.form.number.trim() ? '' : 'Number is required.';
+                            break;
+                        case 'password':
+                            if (!this.form.password) {
+                                this.errors.password = 'Password is required.';
+                            } else if (this.form.password.length < 6) {
+                                this.errors.password = 'Password must be at least 6 characters.';
+                            } else {
+                                this.errors.password = '';
+                            }
+                            // Also re-validate confirm password if password changes
+                            this.validateField('confirmpassword');
+                            break;
+                        case 'confirmpassword':
+                            if (!this.form.confirmpassword) {
+                                this.errors.confirmpassword = 'Please confirm your password.';
+                            } else if (this.form.confirmpassword !== this.form.password) {
+                                this.errors.confirmpassword = 'Passwords do not match.';
+                            } else {
+                                this.errors.confirmpassword = '';
+                            }
+                            break;
+                    }
+                },
+                validateForm() {
+                    let valid = true;
+                    // Full Name
+                    if (!this.form.fullname.trim()) {
+                        this.errors.fullname = "Full name is required.";
+                        valid = false;
+                    } else {
+                        this.errors.fullname = "";
+                    }
+                    // Email
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!this.form.email.trim()) {
+                        this.errors.email = "Email is required.";
+                        valid = false;
+                    } else if (!emailPattern.test(this.form.email)) {
+                        this.errors.email = "Invalid email address.";
+                        valid = false;
+                    } else {
+                        this.errors.email = "";
+                    }
+                    // Number
+                    if (!this.form.number.trim()) {
+                        this.errors.number = "Number is required.";
+                        valid = false;
+                    } else {
+                        this.errors.number = "";
+                    }
+                    // Password
+                    if (!this.form.password) {
+                        this.errors.password = "Password is required.";
+                        valid = false;
+                    } else if (this.form.password.length < 6) {
+                        this.errors.password = "Password must be at least 6 characters.";
+                        valid = false;
+                    } else {
+                        this.errors.password = "";
+                    }
+                    // Confirm Password
+                    if (!this.form.confirmpassword) {
+                        this.errors.confirmpassword = "Please confirm your password.";
+                        valid = false;
+                    } else if (this.form.confirmpassword !== this.form.password) {
+                        this.errors.confirmpassword = "Passwords do not match.";
+                        valid = false;
+                    } else {
+                        this.errors.confirmpassword = "";
+                    }
+                    return valid;
+                },
+                showAlert() {
+                    if (this.validateForm()) {
+                        this.showModal = true;
+                    }
+                }
+            }
+        });
 
-                        <div class="input-box">
-                            <span class="details">Number</span>
-                            <span id="numberError"></span>
-                            <input id="number" type="tel" placeholder="Enter Your Number ">
-                        </div>
+        app.component('input-component', {
+            template: document.getElementById('input-component'),
+            props: ['label', 'id', 'type', 'placeholder', 'error', 'errorId', 'modelValue'],
+            emits: ['update:modelValue', 'input']
+        });
 
-                        <div class="input-box">
-                            <span class="details">Password</span>
-                            <span id="passwordError"></span>
-                            <input id="password" type="password" placeholder="Enter your Password">
-                        </div>
+        app.component('modal-component', {
+            template: document.getElementById('modal-component')
+        });
 
-                        <div class="input-box">
-                            <span class="details">Confirm Password</span>
-                            <span id="confirmError"></span>
-                            <input id="confirmpassword" type="password" placeholder="Confirm your Password">
-                        </div>
-                    </div>
-               <button id="subBtn" class="submit" type="submit">Submit</button>
-                   <!--    <a class="submit" href="submit.html">Submit</a>  -->
+        app.mount('#app');
+        </script>
 
-                </form>
 
-                
-
-    <script src="booking.js"></script> 
-</div>
+        <style scoped>
+        button {
+          font-weight: bold;
+        }
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0,0,0,0.4);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+        }
+        .modal-content {
+          background: #fff;
+          padding: 2rem 2.5rem;
+          border-radius: 10px;
+          text-align: center;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .close-modal {
+          margin-top: 1.5rem;
+          padding: 0.5rem 1.5rem;
+          background: #ded3dc;
+          border: none;
+          border-radius: 6px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        </style>
+    </div>
 </body>
 </html>
