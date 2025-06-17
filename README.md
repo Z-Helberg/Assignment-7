@@ -8,25 +8,27 @@ This project is part of my front-end development course. It simulates a user con
 -**career.html** was renamed to **booking.html** to improve clarity and make navigation simpler.
 -**script.js** was renamed to **booking.js** to ensure the script file corresponds directly with the form page (booking.html), making it easier to manage and understand.
 
-
-## Task 1: What the Form Does and How It Works
+## Task 1: What the Form Does and How It Works with Vue
 
 - On the **career.html** page, users are invited to book a **free consultation** with a simple call-to-action button.
+- Aach of the fields values is saved in the createApp, and referenced when creating the vue component.
+- The value is passed in using v-model.
 - Clicking the button opens a **registration form** where the user fills in:
   - Full name
   - Email address
   - Phone number
   - Password and confirmation
+- The input is continiously checked by using @input to validate as the user types.
 - When the form is submitted:
-  - **JavaScript validation** checks the inputs (detailed below).
-  - If all data is valid, the user is redirected to `submit.html`, which displays a thank-you message.
+  - **JavaScript validation** checks the inputs (detailed below) I tried to use the same validations as before, but in a way that works with vue.
+  - If all data is valid, a modal is shown confirming submission, this is done by setting this.showModal = true;.
 
 
 
 
 ## Form Validation (JavaScript)
 
-Form validation is handled in `booking.js`, and runs on form submission:
+Form validation is handled in with vue components, and runs on form submission:
 
  **Full Name** -  Must include a space (to ensure both name and surname are entered)                         
  **Email** -  Must include an `@` character                                                              
@@ -57,16 +59,4 @@ Although the form appears on its own page, it functions like a modal interaction
 
 ## Challenges Faced
 
-- I attempted to add a **burger menu** to the navigation bar but got stuck during implementation. I plan to return to this at a later stage in the project. 
-- Another challenge was writing functions in JavaScript. I often understand **what needs to happen**, but I’m still learning **how to write it clearly and correctly**.
-
-
-
-##  Personal Reflections
-
-- This was a valuable learning experience. It helped me practice:
-  - DOM manipulation
-  - Event listeners
-  - Form validation
-- I'm gaining confidence, especially with HTML and CSS.
-- **JavaScript is still challenging**, especially understanding how functions work under the hood — but I will continue to practice!
+- Vue is still confusing and required a lot of trial and error to get working as expected.
